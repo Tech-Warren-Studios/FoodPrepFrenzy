@@ -2,10 +2,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 5.0f; // Adjustable movement speed
-    public float turnSpeed = 10.0f; // Adjustable turn speed for smooth rotation
+    public float moveSpeed = 5f; // You can adjust this speed in the Unity Inspector
 
-    private Rigidbody rb; // Using Rigidbody for physics-based movement
+    private Rigidbody rb;
     private Vector3 movement;
 
     void Start()
@@ -16,42 +15,18 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        // Get input from keyboard
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
+        // Get input from the horizontal and vertical axes
+        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveZ = Input.GetAxisRaw("Vertical");
 
-        // Create movement vector
-        movement = new Vector3(horizontal, 0, vertical).normalized;
-
-        // Handle rotation only if there's movement
-        if (movement.magnitude > 0)
-        {
-            RotatePlayer();
-        }
+        // Apply the input to the movement vector
+        movement = new Vector3(moveX, 0, moveZ).normalized;
     }
 
     void FixedUpdate()
     {
-        // Move the player in FixedUpdate for consistent physics update
-        MovePlayer();
-    }
-
-    void MovePlayer()
-    {
-        // Calculate the new position
-        Vector3 newPosition = rb.position + movement * moveSpeed * Time.fixedDeltaTime;
-
-        // Apply the movement to the Rigidbody
-        rb.MovePosition(newPosition);
-    }
-
-    void RotatePlayer()
-    {
-        // Calculate the rotation towards the movement direction
-        Quaternion toRotation = Quaternion.LookRotation(movement, Vector3.up);
-
-        // Apply the rotation smoothly
-        rb.rotation = Quaternion.Slerp(rb.rotation, toRotation, turnSpeed * Time.fixedDeltaTime);
+        // Move the player's Rigidbody
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 }
 
