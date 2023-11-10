@@ -6,13 +6,12 @@ public class FridgeInteraction : MonoBehaviour
 
     private bool playerInRange = false;
 
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
-            Debug.Log("Player entered range"); // Add this
+            Debug.Log("Player entered range");
         }
     }
 
@@ -21,8 +20,19 @@ public class FridgeInteraction : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
-            Debug.Log("Player left range"); // Add this
-            foodSelectionUI.GetComponent<FoodSelectionCanvas>().ToggleFoodSelection(false);
+            Debug.Log("Player left range");
+
+            // Check if foodSelectionUI is not null before accessing its component
+            if (foodSelectionUI != null)
+            {
+                FoodSelectionCanvas foodCanvas = foodSelectionUI.GetComponent<FoodSelectionCanvas>();
+
+                // Further check if the component is not null
+                if (foodCanvas != null)
+                {
+                    foodCanvas.ToggleFoodSelection(false);
+                }
+            }
         }
     }
 
@@ -31,10 +41,15 @@ public class FridgeInteraction : MonoBehaviour
         if (playerInRange && Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("Space key pressed");
-            foodSelectionUI.SetActive(true); // Directly set to active
+
+            // Also check here if foodSelectionUI is not null before setting it active
+            if (foodSelectionUI != null)
+            {
+                foodSelectionUI.SetActive(true);
+            }
         }
     }
-
 }
+
 
 
