@@ -6243,7 +6243,7 @@ GameObject:
   - component: {fileID: 641364732}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9155,13 +9155,14 @@ GameObject:
   - component: {fileID: 942365334}
   - component: {fileID: 942365333}
   - component: {fileID: 942365332}
+  - component: {fileID: 942365335}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &942365331
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9248,6 +9249,26 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &942365335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942365330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fe1154e20ca5f846b43cd29ca485174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  steakPrefab: {fileID: 6606488338236710159, guid: ad41f5232b74cfa4fa71493a5f915cff,
+    type: 3}
+  carrotPrefab: {fileID: 2680800633297254531, guid: 7084d239ef986884398fb025db6d9da1,
+    type: 3}
+  cheesePrefab: {fileID: 6744314033347649187, guid: 744513c8b66219548898e58361b328f3,
+    type: 3}
+  holdPoint: {fileID: 271763439}
+  player: {fileID: 641364729}
 --- !u!1001 &944348167
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10236,6 +10257,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2142486874285244716, guid: 62692eabc25dde1459009edff4df9f75,
     type: 3}
   m_PrefabInstance: {fileID: 1010310345}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1015434605 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2ed4dc0d60913f94babb58db32dbbe9d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1781121793}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1032393700
 PrefabInstance:
@@ -13535,58 +13562,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1074141044}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1267005493
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1267005494}
-  - component: {fileID: 1267005495}
-  m_Layer: 0
-  m_Name: FoodSelectionManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1267005494
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1267005493}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1448601946}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1267005495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1267005493}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fe1154e20ca5f846b43cd29ca485174, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  steakPrefab: {fileID: 6606488338236710159, guid: ad41f5232b74cfa4fa71493a5f915cff,
-    type: 3}
-  carrotPrefab: {fileID: 2680800633297254531, guid: 7084d239ef986884398fb025db6d9da1,
-    type: 3}
-  cheesePrefab: {fileID: 6744314033347649187, guid: 744513c8b66219548898e58361b328f3,
-    type: 3}
-  holdPoint: {fileID: 271763439}
-  player: {fileID: 641364729}
 --- !u!1001 &1270528665
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15051,38 +15026,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1445042142}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1448601945
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1448601946}
-  m_Layer: 0
-  m_Name: Managers
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1448601946
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1448601945}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 960, y: 540, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1267005494}
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1470635493
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18399,7 +18342,15 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2ed4dc0d60913f94babb58db32dbbe9d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1781121796}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2ed4dc0d60913f94babb58db32dbbe9d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1781121795}
   m_SourcePrefab: {fileID: 100100000, guid: 2ed4dc0d60913f94babb58db32dbbe9d, type: 3}
 --- !u!4 &1781121794 stripped
 Transform:
@@ -18407,6 +18358,40 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1781121793}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1781121795
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015434605}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.8516436, y: 1.9971004, z: 2.0146928}
+  m_Center: {x: -0.01808405, y: 1.002393, z: 0.64173937}
+--- !u!114 &1781121796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015434605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8209250f2335b4da9fbb415cbdd794, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodSelectionUI: {fileID: 942365330}
 --- !u!1001 &1781914783
 PrefabInstance:
   m_ObjectHideFlags: 0
