@@ -13585,7 +13585,7 @@ MonoBehaviour:
     type: 3}
   cheesePrefab: {fileID: 6744314033347649187, guid: 744513c8b66219548898e58361b328f3,
     type: 3}
-  holdPoint: {fileID: 0}
+  holdPoint: {fileID: 271763439}
   player: {fileID: 641364729}
 --- !u!1001 &1270528665
 PrefabInstance:
