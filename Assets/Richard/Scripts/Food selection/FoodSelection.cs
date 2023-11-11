@@ -54,7 +54,8 @@ public class FoodSelection : MonoBehaviour
     // Handles the selection of the food item
     private void SelectFood(GameObject foodPrefab)
     {
-        if (foodPrefab != null)
+        // Check if holdPoint is empty and foodPrefab is not null
+        if (IsHoldPointEmpty() && foodPrefab != null)
         {
             Instantiate(foodPrefab, holdPoint.position, Quaternion.identity, holdPoint);
             // Additional logic if needed, e.g., replacing existing food, etc.
@@ -73,6 +74,12 @@ public class FoodSelection : MonoBehaviour
     {
         Time.timeScale = pause ? 0 : 1;
         canvasGameObject.SetActive(pause);
+    }
+
+    // Check if holdPoint is empty
+    public bool IsHoldPointEmpty()
+    {
+        return holdPoint.childCount == 0;
     }
 }
 

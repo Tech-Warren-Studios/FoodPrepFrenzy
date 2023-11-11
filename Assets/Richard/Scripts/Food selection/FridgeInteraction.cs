@@ -42,8 +42,8 @@ public class FridgeInteraction : MonoBehaviour
         {
             Debug.Log("Space key pressed");
 
-            // Also check here if foodSelectionUI is not null before setting it active
-            if (foodSelectionUI != null)
+            // Check if the holdPoint is empty before showing food selection UI
+            if (foodSelectionUI != null && FoodSelection.Instance.IsHoldPointEmpty())
             {
                 foodSelectionUI.SetActive(true);
             }
