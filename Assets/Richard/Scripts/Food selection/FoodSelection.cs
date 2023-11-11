@@ -19,6 +19,9 @@ public class FoodSelection : MonoBehaviour
     // Hold point
     public Transform holdPoint; // Point on the player where food will be held
 
+    // Canvas GameObject
+    public GameObject canvasGameObject; // Public variable to assign the Canvas
+
     private void Awake()
     {
         // Singleton setup
@@ -33,12 +36,19 @@ public class FoodSelection : MonoBehaviour
         // Optionally, make this object persistent across scenes:
         // DontDestroyOnLoad(gameObject);
 
-        gameObject.SetActive(false); // Start with the UI not visible
+        canvasGameObject.SetActive(false); // Start with the UI not visible
 
         // Assign button click listeners
-        steakButton.onClick.AddListener(() => SelectFood(steakPrefab));
-        carrotButton.onClick.AddListener(() => SelectFood(carrotPrefab));
-        cheeseButton.onClick.AddListener(() => SelectFood(cheesePrefab));
+        steakButton.onClick.AddListener(() => ButtonClicked(steakPrefab));
+        carrotButton.onClick.AddListener(() => ButtonClicked(carrotPrefab));
+        cheeseButton.onClick.AddListener(() => ButtonClicked(cheesePrefab));
+    }
+
+    // Called when any of the buttons is clicked
+    private void ButtonClicked(GameObject foodPrefab)
+    {
+        SelectFood(foodPrefab);
+        HideUI();
     }
 
     // Handles the selection of the food item
@@ -49,8 +59,12 @@ public class FoodSelection : MonoBehaviour
             Instantiate(foodPrefab, holdPoint.position, Quaternion.identity, holdPoint);
             // Additional logic if needed, e.g., replacing existing food, etc.
         }
+    }
 
-        // Close the selection UI and unpause the game
+    // Hides the UI
+    private void HideUI()
+    {
+        canvasGameObject.SetActive(false); // Deactivates the Canvas
         PauseGame(false);
     }
 
@@ -58,6 +72,7 @@ public class FoodSelection : MonoBehaviour
     public void PauseGame(bool pause)
     {
         Time.timeScale = pause ? 0 : 1;
-        gameObject.SetActive(pause);
+        canvasGameObject.SetActive(pause);
     }
 }
+

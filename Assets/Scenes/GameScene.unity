@@ -2568,7 +2568,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 271763438}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.352, z: 0.339}
+  m_LocalPosition: {x: 0, y: 1.352, z: 0.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21821,11 +21821,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fe1154e20ca5f846b43cd29ca485174, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steakPrefab: {fileID: 6606488338236710159, guid: ad41f5232b74cfa4fa71493a5f915cff,
+  steakPrefab: {fileID: 2855178022818519184, guid: c554299629d8ab44c867b7b5f5766a0c,
     type: 3}
-  carrotPrefab: {fileID: 2680800633297254531, guid: 7084d239ef986884398fb025db6d9da1,
+  carrotPrefab: {fileID: 5351199985819918304, guid: 7d8abb9d0cab22742b5a983335501ecd,
     type: 3}
-  cheesePrefab: {fileID: 6744314033347649187, guid: 744513c8b66219548898e58361b328f3,
+  cheesePrefab: {fileID: 1048048886887397227, guid: f681d94c7e9bdae499066d96fbce6e33,
     type: 3}
   holdPoint: {fileID: 271763439}
   player: {fileID: 641364729}
@@ -21844,13 +21844,14 @@ MonoBehaviour:
   steakButton: {fileID: 1897093596}
   carrotButton: {fileID: 2062746298}
   cheeseButton: {fileID: 1727787005}
-  steakPrefab: {fileID: 6606488338236710159, guid: ad41f5232b74cfa4fa71493a5f915cff,
+  steakPrefab: {fileID: 2855178022818519184, guid: c554299629d8ab44c867b7b5f5766a0c,
     type: 3}
-  carrotPrefab: {fileID: 2680800633297254531, guid: 7084d239ef986884398fb025db6d9da1,
+  carrotPrefab: {fileID: 5351199985819918304, guid: 7d8abb9d0cab22742b5a983335501ecd,
     type: 3}
-  cheesePrefab: {fileID: 6744314033347649187, guid: 744513c8b66219548898e58361b328f3,
+  cheesePrefab: {fileID: 1048048886887397227, guid: f681d94c7e9bdae499066d96fbce6e33,
     type: 3}
   holdPoint: {fileID: 271763439}
+  canvasGameObject: {fileID: 942365330}
 --- !u!1001 &2082251357
 PrefabInstance:
   m_ObjectHideFlags: 0
