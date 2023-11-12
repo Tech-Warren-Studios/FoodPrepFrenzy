@@ -21868,7 +21868,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fe1154e20ca5f846b43cd29ca485174, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steakPrefab: {fileID: 2855178022818519184, guid: c554299629d8ab44c867b7b5f5766a0c,
+  steakPrefab: {fileID: 6606488338236710159, guid: ad41f5232b74cfa4fa71493a5f915cff,
     type: 3}
   carrotPrefab: {fileID: 5351199985819918304, guid: 7d8abb9d0cab22742b5a983335501ecd,
     type: 3}
@@ -21891,7 +21891,7 @@ MonoBehaviour:
   steakButton: {fileID: 1897093596}
   carrotButton: {fileID: 2062746298}
   cheeseButton: {fileID: 1727787005}
-  steakPrefab: {fileID: 2855178022818519184, guid: c554299629d8ab44c867b7b5f5766a0c,
+  steakPrefab: {fileID: 6606488338236710159, guid: ad41f5232b74cfa4fa71493a5f915cff,
     type: 3}
   carrotPrefab: {fileID: 5351199985819918304, guid: 7d8abb9d0cab22742b5a983335501ecd,
     type: 3}
