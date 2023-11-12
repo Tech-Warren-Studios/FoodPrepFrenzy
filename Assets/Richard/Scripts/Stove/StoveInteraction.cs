@@ -13,6 +13,9 @@ public class StoveInteraction : MonoBehaviour
 
     private bool playerInRange = false;
     private GameObject currentSteak;
+    private bool isCooking = false; // Flag to check if cooking is already in progress
+    private float inputCooldown = 0.5f; // Cooldown time in seconds to debounce input
+    private float lastInputTime = -1f; // Time when the last input was registered
 
     private void OnTriggerEnter(Collider other)
     {
@@ -34,21 +37,26 @@ public class StoveInteraction : MonoBehaviour
 
     private void Update()
     {
-        // Check if the player is in range
-        if (playerInRange)
+        // Check if the player is in range and if the cooldown period has passed
+        if (playerInRange && Time.time >= lastInputTime + inputCooldown)
         {
             Debug.Log("Player is in range of the stove.");
 
             // Check for spacebar press
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                lastInputTime = Time.time; // Update the last input time
                 Debug.Log("Spacebar pressed near the stove.");
-                StartCoroutine(CookSteak());
+                if (!isCooking)
+                {
+                    PlaceSteakOnStove();
+                    StartCoroutine(CookSteak());
+                }
             }
         }
     }
 
-    private IEnumerator CookSteak()
+    private void PlaceSteakOnStove()
     {
         Transform holdPoint = FoodSelection.Instance.holdPoint;
 
@@ -56,20 +64,28 @@ public class StoveInteraction : MonoBehaviour
         {
             GameObject steak = holdPoint.GetChild(0).gameObject;
             currentSteak = steak;
-
-            // Cooking stages
-            yield return new WaitForSeconds(5);
-            ReplaceSteak(rareSteakPrefab);
-
-            yield return new WaitForSeconds(5);
-            ReplaceSteak(mediumSteakPrefab);
-
-            yield return new WaitForSeconds(5);
-            ReplaceSteak(wellDoneSteakPrefab);
-
-            yield return new WaitForSeconds(15);
-            ReplaceSteak(burntSteakPrefab);
+            ReplaceSteak(rawSteakPrefab); // Immediately replace with raw steak prefab
         }
+    }
+
+    private IEnumerator CookSteak()
+    {
+        isCooking = true; // Set cooking flag to true
+
+        // Cooking stages
+        yield return new WaitForSeconds(5);
+        ReplaceSteak(rareSteakPrefab);
+
+        yield return new WaitForSeconds(5);
+        ReplaceSteak(mediumSteakPrefab);
+
+        yield return new WaitForSeconds(5);
+        ReplaceSteak(wellDoneSteakPrefab);
+
+        yield return new WaitForSeconds(15);
+        ReplaceSteak(burntSteakPrefab);
+
+        isCooking = false; // Reset cooking flag after coroutine
     }
 
     private void ReplaceSteak(GameObject newSteakPrefab)
