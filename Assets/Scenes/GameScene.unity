@@ -1631,6 +1631,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 155706822}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &184999396 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3576351593939263874, guid: 7400b3203eb155145afc45a795862c98,
+    type: 3}
+  m_PrefabInstance: {fileID: 717833880}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &191916429
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4492,6 +4498,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 425373193}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &429193933 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2791504727653216368, guid: 2cdff1e9cef0a64488f03b6576e27c69,
+    type: 3}
+  m_PrefabInstance: {fileID: 332833624}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &430555193
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6371,6 +6383,7 @@ Transform:
   m_Children:
   - {fileID: 1009395448}
   - {fileID: 271763439}
+  - {fileID: 1360183299}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7238,7 +7251,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3576351593939263874, guid: 7400b3203eb155145afc45a795862c98,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 717833885}
   m_SourcePrefab: {fileID: 100100000, guid: 7400b3203eb155145afc45a795862c98, type: 3}
 --- !u!4 &717833881 stripped
 Transform:
@@ -7246,6 +7263,21 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 717833880}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &717833885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184999396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c73419068d6bc254ebb2da88b4bcf959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  holdPoint: {fileID: 1360183299}
+  pan: {fileID: 184999396}
+  plate: {fileID: 429193933}
 --- !u!1001 &721843710
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14660,6 +14692,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1358239472}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1360183298
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1360183299}
+  m_Layer: 0
+  m_Name: Hold point for pan
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1360183299
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360183298}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.352, z: 0.47}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 641364730}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1400107044
 PrefabInstance:
   m_ObjectHideFlags: 0
